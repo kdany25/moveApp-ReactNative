@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, Image } from "react-native";
+import { View, SafeAreaView, Image } from "react-native";
 import React, { FunctionComponent } from "react";
 import tw from "tailwind-react-native-classnames";
 import NavOptions from "../components/NavOptions";
