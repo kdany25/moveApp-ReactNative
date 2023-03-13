@@ -2,8 +2,13 @@ import { View, SafeAreaView, Image } from "react-native";
 import React, { FunctionComponent } from "react";
 import tw from "tailwind-react-native-classnames";
 import NavOptions from "../components/NavOptions";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { GOOGLE_MAPS_APIKEY } from "@env";
+import { useDispatch } from "react-redux";
+import { setOrigin, setDestination } from "../slices/navslice";
 
 const HomeScreen: FunctionComponent = () => {
+	const dispatch = useDispatch
 	return (
 		<SafeAreaView style={tw`bg-white h-full`}>
 			<View style={tw`p-5`}>
@@ -15,7 +20,31 @@ const HomeScreen: FunctionComponent = () => {
 					}}
 					source={{ uri: "https://links.papareact.com/gzs" }}
 				/>
-        <NavOptions/>
+				<GooglePlacesAutocomplete
+					placeholder="Where from"
+					styles={{
+						container: {
+							flex: 0,
+						},
+						textInput: {
+							fontSize: 18,
+						},
+					}}
+					enablePoweredByContainer={false}
+					minLength={2}
+					query={{
+						key: GOOGLE_MAPS_APIKEY,
+						language: "en",
+					}}
+					nearbyPlacesAPI="GooglePlacesSearch"
+					debounce={400}
+					fetchDetails={true}
+					onPress={(data,details= null) => {
+						console.log(data)
+					}}
+					returnKeyType ={"search"}
+				/>
+				<NavOptions />
 			</View>
 		</SafeAreaView>
 	);
