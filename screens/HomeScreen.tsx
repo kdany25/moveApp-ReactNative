@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { setOrigin, setDestination } from "../slices/navslice";
 
 const HomeScreen: FunctionComponent = () => {
-	const dispatch = useDispatch
+	const dispatch = useDispatch;
 	return (
 		<SafeAreaView style={tw`bg-white h-full`}>
 			<View style={tw`p-5`}>
@@ -39,10 +39,16 @@ const HomeScreen: FunctionComponent = () => {
 					nearbyPlacesAPI="GooglePlacesSearch"
 					debounce={400}
 					fetchDetails={true}
-					onPress={(data,details= null) => {
-						console.log(data)
+					onPress={(data, details = null) => {
+						dispatch(
+							setOrigin({
+								location: details?.geometry.location,
+								description: data.description,
+							})
+						);
+						dispatch(setDestination(null));
 					}}
-					returnKeyType ={"search"}
+					returnKeyType={"search"}
 				/>
 				<NavOptions />
 			</View>
