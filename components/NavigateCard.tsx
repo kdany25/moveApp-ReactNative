@@ -21,7 +21,6 @@ const NavigateCard = () => {
 						debounce={400}
 						styles={toInputBoxStyles}
 						fetchDetails={true}
-						returnKeyType={"search"}
 						minLength={2}
 						onPress={(data, details = null) => {
 							dispatch(

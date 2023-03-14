@@ -5,9 +5,10 @@ import Map from "../components/Map";
 import NavigateCard from "../components/NavigateCard";
 import { createStackNavigator } from "@react-navigation/stack";
 import RideOptionsCard from "../components/RideOptionsCard";
+import { RootStackParamList } from "../types/navigation";
 
 const MapScreen = () => {
-	const Stack = createStackNavigator();
+	const Stack = createStackNavigator<RootStackParamList>();
 	return (
 		<View>
 			<View style={tw`h-1/2`}>
