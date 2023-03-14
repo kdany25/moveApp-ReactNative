@@ -48,7 +48,6 @@ const HomeScreen: FunctionComponent = () => {
 						);
 						dispatch(setDestination(null));
 					}}
-					returnKeyType={"search"}
 				/>
 				<NavOptions />
 			</View>

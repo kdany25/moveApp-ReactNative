@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useSelector } from "react-redux";
 import { selectOrigin } from "../slices/navslice";
 
+
 const data = [
 	{
 		id: "123",
@@ -35,7 +36,7 @@ const NavOptions: FunctionComponent = () => {
 					onPress={() => navigation.navigate(item.screen)}
 					disabled={!origin}
 				>
-					<View style={tw`${!origin && "opacity-20"}`}>
+					<View style={tw`${!origin ? "opacity-20" : ""}`}>
 						<Image
 							style={{
 								width: 120,
