@@ -35,7 +35,7 @@ const NavOptions: FunctionComponent = () => {
 					onPress={() => navigation.navigate(item.screen)}
 					disabled={!origin}
 				>
-					<View>
+					<View style={tw`${!origin && "opacity-20"}`}>
 						<Image
 							style={{
 								width: 120,
