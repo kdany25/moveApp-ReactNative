@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
-import React from "react";
+import React, { FunctionComponent } from "react";
 import tw from "tailwind-react-native-classnames";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { GOOGLE_MAPS_APIKEY } from "@env";
@@ -10,7 +10,7 @@ import NavFavourites from "./NavFavourites";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Icon } from "react-native-elements";
 
-const NavigateCard = () => {
+const NavigateCard: FunctionComponent = () => {
 	const dispatch = useDispatch();
 	const navigation = useNavigation();
 	return (

@@ -5,7 +5,7 @@ import {
 	FlatList,
 	TouchableOpacity,
 } from "react-native";
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Icon } from "react-native-elements";
 import tw from "tailwind-react-native-classnames";
 
@@ -24,7 +24,7 @@ const data = [
 	},
 ];
 
-const NavFavourites = () => {
+const NavFavourites: FunctionComponent = () => {
 	return (
 		<FlatList
 			data={data}
