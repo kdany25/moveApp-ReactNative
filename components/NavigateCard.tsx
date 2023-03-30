@@ -32,6 +32,7 @@ const NavigateCard: FunctionComponent = () => {
 									description: data.description,
 								})
 							);
+							//@ts-ignore
 							navigation.navigate("RideOptionsCard");
 						}}
 						enablePoweredByContainer={false}
@@ -49,6 +50,7 @@ const NavigateCard: FunctionComponent = () => {
 			>
 				<TouchableOpacity
 					style={tw`flex flex-row justify-between bg-black w-24 px-4 py-3 rounded-full`}
+					//@ts-ignore
 					onPress={() => navigation.navigate("RideOptionsCard")}
 				>
 					<Icon
